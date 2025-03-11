@@ -37,6 +37,8 @@ android {
     buildFeatures {
         compose = true
     }
+    buildToolsVersion = "34"
+    ndkVersion = "34"
 }
 
 dependencies {
@@ -48,7 +50,9 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,7 +1,6 @@
-package vipu.srihar.loginpage.ui.theme
+package vipu.srihar.loginpage
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,28 +9,22 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Divider
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode.Companion.Color
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.style.TextIndent
 import androidx.compose.ui.unit.dp
-import vipu.srihar.loginpage.R
+import androidx.navigation.NavController
 
 
 @Composable
-fun LoginScreen(){
+fun LoginScreen(navController: NavController){
 
     var username: String by remember { mutableStateOf("")}
 
@@ -88,13 +81,12 @@ fun LoginScreen(){
         Spacer(modifier = Modifier.height(10.dp))
 
 
-        Image(
-            painter = painterResource(id=R.drawable.google),
-            contentDescription = "google",
-            modifier = Modifier.size(50.dp)
+        Image(painter = painterResource(id = R.drawable.google), contentDescription = "google", modifier = Modifier
+                .size(50.dp)
+                .clickable {
+                    navController.navigate("SignUpGoogle")
+                }
         )
-
-
 
 
     }
